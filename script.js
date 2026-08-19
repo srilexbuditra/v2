@@ -1,4 +1,4 @@
-const WA_NUMBER='6282135238350';
+const WA_NUMBER='6282136238350';
 const fmt=n=>new Intl.NumberFormat('id-ID').format(n);
 let base=5000000, extra=0, packageName='Professional';
 const $=s=>document.querySelector(s);
