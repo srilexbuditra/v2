@@ -1,0 +1,12 @@
+const WA_NUMBER='6281234567890';
+const fmt=n=>new Intl.NumberFormat('id-ID').format(n);
+let base=5000000, extra=0, packageName='Professional';
+const $=s=>document.querySelector(s);
+const update=()=>{const total=base+extra;$('#total').textContent='Rp '+fmt(total);$('#resultProject').textContent=$('#project').value;$('#resultFeature').textContent=extra?$('#feature').selectedOptions[0].textContent.replace(/ \(.*$/,''):'-';const msg=`Halo Srilex Buditra, saya ingin konsultasi proyek.\n\nNama: ${$('#name').value||'-'}\nPerusahaan: ${$('#company').value||'-'}\nEmail: ${$('#email').value||'-'}\nWhatsApp: ${$('#phone').value||'-'}\nJenis proyek: ${$('#project').value}\nPaket: ${packageName}\nFitur: ${$('#feature').selectedOptions[0].textContent}\nEstimasi: Rp ${fmt(total)}\nCatatan: ${$('#notes').value||'-'}`;$('#waLink').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);$('#contactWa').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent('Halo Srilex Buditra, saya ingin berkonsultasi mengenai jasa Full Stack Developer.');};
+$('#estimateForm').addEventListener('submit',e=>{e.preventDefault();update();document.querySelector('.result').scrollIntoView({behavior:'smooth'});});
+$('#feature').addEventListener('change',e=>{extra=Number(e.target.value);update();});
+document.querySelectorAll('[data-package]').forEach(b=>b.addEventListener('click',()=>{packageName=b.dataset.package;base=Number(b.dataset.price)||5000000;update();document.querySelector('#harga').scrollIntoView({behavior:'smooth'});}));
+$('#printBtn').addEventListener('click',()=>window.print());
+$('.menu').addEventListener('click',()=>$('.nav').classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>$('.nav').classList.remove('open')));
+update();
