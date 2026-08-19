@@ -1,4 +1,4 @@
-# Website Srilex Buditra — Desain Gambar No. 3
+# Website Srilex Buditra — Website v2
 
 Website portfolio Full Stack Developer dengan gaya mobile-first dark navy/gold, foto close-up, layanan, portfolio, paket harga, formulir estimasi, WhatsApp, cetak/simpan PDF, alur pemesanan, FAQ, kontak dan footer.
 
